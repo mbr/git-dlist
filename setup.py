@@ -23,7 +23,7 @@ setup(
     install_requires=['colorama'],
     entry_points={
         'console_scripts': [
-            'git-dlist = gitlist:main',
+            'git-dlist = gitdlist:main',
         ],
     }
 )
