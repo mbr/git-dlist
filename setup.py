@@ -11,7 +11,7 @@ def read(fname):
 
 
 setup(
-    name='gitlist',
+    name='git-dlist',
     version='0.1dev',
     description='Small tool to keep a directory of git repositories in sync.',
     long_description=read('README.rst'),
@@ -23,7 +23,7 @@ setup(
     install_requires=['colorama'],
     entry_points={
         'console_scripts': [
-            'gitlist = gitlist:main',
+            'git-dlist = gitlist:main',
         ],
     }
 )
