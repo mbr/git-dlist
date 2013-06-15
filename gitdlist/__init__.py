@@ -12,10 +12,12 @@ def _make_color(col):
     fgcol = getattr(Fore, col)
     return lambda s: fgcol + s + Fore.RESET
 
+
 red = _make_color('RED')
 cyan = _make_color('CYAN')
 green = _make_color('GREEN')
 yellow = _make_color('YELLOW')
+
 
 def main():
     init()
