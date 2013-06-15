@@ -19,6 +19,9 @@ green = _make_color('GREEN')
 yellow = _make_color('YELLOW')
 
 
+ORIGIN = 'origin'
+
+
 def main():
     init()
     try:
@@ -32,6 +35,18 @@ def main():
             path = os.path.abspath(os.path.join(args.dir, p))
             with tempfile.TemporaryFile() as tmp:
                 try:
+                    remotes = subprocess.check_output(
+                        ['git', 'remote'],
+                        cwd=path,
+                        stderr=tmp,
+                    ).split('\n')
+
+                    if not ORIGIN in remotes:
+                        print '%s: %s' % (
+                            cyan(p), 'has no remote "%s"' % ORIGIN
+                        )
+                        continue
+
                     output = subprocess.check_output(
                     ['git', 'log', 'origin/master..HEAD', '--oneline'],
                     cwd=path,
