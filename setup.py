@@ -12,7 +12,7 @@ def read(fname):
 
 setup(
     name='git-dlist',
-    version='0.1dev',
+    version='0.2dev',
     description='Small tool to keep a directory of git repositories in sync.',
     long_description=read('README.rst'),
     author='Marc Brinkmann',
